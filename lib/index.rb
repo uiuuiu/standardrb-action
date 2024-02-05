@@ -24,5 +24,5 @@ end
   else
     Dir.chdir(ENV["GITHUB_WORKSPACE"]) { JSON.parse(`standardrb --parallel -f json`) }
   end
-
+puts @github_data
 GithubCheckRunService.new(@report, @github_data, ReportAdapter).run
