@@ -18,7 +18,7 @@ jobs:
       run: echo ::set-output name=RUBY_VERSION::$(cat .ruby-version)
       id: rv
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: "${{ steps.rv.outputs.RUBY_VERSION }}"
     - name: Bundle
