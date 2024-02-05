@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Read ruby version
-      run: echo ::set-output name=RUBY_VERSION::$(cat .ruby-version || '3.2.1')
+      run: echo ::set-output name=RUBY_VERSION::$(([ -f .ruby-version ] && cat .ruby-version) || '3.2.1')
       id: rv
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
